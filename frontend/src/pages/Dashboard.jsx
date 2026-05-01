@@ -26,8 +26,8 @@ const Dashboard = () => {
       const headers = { Authorization: `Bearer ${token}` };
       
       const [tasksRes, projectsRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/tasks', { headers }),
-        axios.get('http://localhost:5000/api/projects', { headers })
+        axios.get('https://task-manager-zg2s.onrender.com/api/tasks', { headers }),
+        axios.get('https://task-manager-zg2s.onrender.com/api/projects', { headers })
       ]);
       
       setTasks(tasksRes.data);
@@ -63,7 +63,7 @@ const Dashboard = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/tasks', 
+      const response = await axios.post('https://task-manager-zg2s.onrender.com/api/tasks', 
         { 
           title, priority, dueDate, status: 'Todo',
           project: selectedProject || null,
@@ -86,7 +86,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (taskId, newStatus) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.put(`http://localhost:5000/api/tasks/${taskId}`, 
+      await axios.put(`https://task-manager-zg2s.onrender.com/api/tasks/${taskId}`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -101,7 +101,7 @@ const Dashboard = () => {
   const handleDeleteTask = async (taskId) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+      await axios.delete(`https://task-manager-zg2s.onrender.com/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTasks(tasks.filter(task => task._id !== taskId));

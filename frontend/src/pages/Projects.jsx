@@ -12,7 +12,7 @@ const Projects = () => {
   const fetchProjects = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/projects', {
+      const response = await axios.get('https://task-manager-zg2s.onrender.com/api/projects', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setProjects(response.data);
@@ -31,7 +31,7 @@ const Projects = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/projects', 
+      const response = await axios.post('https://task-manager-zg2s.onrender.com/api/projects', 
         { name, description },
         { headers: { Authorization: `Bearer ${token}` } }
       );

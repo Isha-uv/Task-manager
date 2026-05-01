@@ -20,7 +20,7 @@ const Login = () => {
       const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
       const payload = isLogin ? { email, password } : { name, email, password };
       
-      const response = await axios.post(`http://localhost:5000${endpoint}`, payload);
+      const response = await axios.post(`https://task-manager-zg2s.onrender.com${endpoint}`, payload);
       const data = response.data;
 
       // 💡 SMART DETECTOR: Backend kisi bhi naam se bheje, yeh pakad lega
