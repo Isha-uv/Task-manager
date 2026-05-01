@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+body {
+  background-color: #f3f4f6; /* Halka grey background app ke liye */
+}
