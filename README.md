@@ -36,7 +36,7 @@ Follow these steps to run the project locally:
 git clone https://github.com/Isha-uv/Task-manager.git
 cd Task-manager
 🌐 Deployment
-Backend: Deployed on Render
+Backend: Deployed on Render (https://task-manager-zg2s.onrender.com)
 
 Database: Hosted on MongoDB Atlas
 
